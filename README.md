@@ -59,24 +59,36 @@ API Endpoints:
 
 
     Example Response:
+
         {
+
     "number": 153,
+
     "is_prime": false,
+
     "is_perfect": false,
+
     "properties": ["armstrong", "odd"],
+
     "digit_sum": 9,
+
     "fun_fact": "153 is a narcissistic number."
+
     }
 
 
 Error Handling:
-    - 400 Bad Request: If the provided number is not valid (e.g., non-numeric input).
-    - 404 Not Found: If the endpoint is incorrect.
-    - 500 Internal Server Error: For unexpected issues.
+- 400 Bad Request: If the provided number is not valid (e.g., non-numeric input).
+- 404 Not Found: If the endpoint is incorrect.
+- 500 Internal Server Error: For unexpected issues.
 
 
 Example of invalid request:
+
     {
+
     "number": "alphabet",
+
     "error": true
+
     }
