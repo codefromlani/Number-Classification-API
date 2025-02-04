@@ -11,26 +11,29 @@ CORS(app)
 
 
 def is_armstrong(num):
-    num_str = str(num)
+    if num < 0:
+        return False
+
+    num_str = str(abs(num))
     power = len(num_str)
 
     total = sum(int(digit) ** power for digit in num_str)
 
-    return total == num
+    return total == abs(num)
 
 def is_prime(num):
     if num < 2:
         return False
-    for i in range(2, int(math.sqrt(num)) + 1):
+    for i in range(2, int(math.sqrt(abs(num))) + 1):
         if num % i == 0:
             return False
     
     return True
 
 def is_perfect(num):
-    if num < 1:
+    if num <= 1:
         return False
-    divisors_sum = sum(i for i in range(1, num) if num % i == 0)
+    divisors_sum = sum(i for i in range(1, abs(num)) if num % i == 0)
 
     return divisors_sum == num
 
@@ -38,9 +41,7 @@ def get_digit_sum(num):
     return sum(int(digit) for digit in str(abs(num)))
 
 def get_properties(num):
-    if num < 0:
-        raise ValueError("Negative numbers are not supported.")
-    
+
     properties = []
 
     if is_armstrong(num):
@@ -60,8 +61,6 @@ def get_properties(num):
     return properties
 
 def get_fun_fact(num):
-    if num < 0:
-        return f"{num} is an interesting number, though its properties are not typically defined in mathematical contexts."
 
     try:
         response = requests.get(f"http://numbersapi.com/{num}/math")
