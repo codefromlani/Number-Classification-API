@@ -83,10 +83,10 @@ def classify_number():
         if number < 0:
             raise ValueError("Negative numbers are not supported.")
     
-    except ValueError as e:
+    except ValueError:
         error_response = OrderedDict([
             ("number", number_str),
-            ("error", str(e))
+            ("error", True)
         ])
 
         return Response(json.dumps(error_response), mimetype='application/json'), 400
