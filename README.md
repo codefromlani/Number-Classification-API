@@ -60,21 +60,21 @@ API Endpoints:
 
     Example Response:
 
-    {
+        {
 
-    "number": 153,
+        "number": 153,
 
-    "is_prime": false,
+        "is_prime": false,
 
-    "is_perfect": false,
+        "is_perfect": false,
 
-    "properties": ["armstrong", "odd"],
+        "properties": ["armstrong", "odd"],
 
-    "digit_sum": 9,
+        "digit_sum": 9,
 
-    "fun_fact": "153 is a narcissistic number."
+        "fun_fact": "153 is a narcissistic number."
 
-    }
+        }
 
 
 Error Handling:
