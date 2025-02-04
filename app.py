@@ -79,9 +79,6 @@ def classify_number():
 
     try:
         number = int(number_str)
-
-        if number < 0:
-            raise ValueError("Negative numbers are not supported.")
     
     except ValueError:
         error_response = OrderedDict([
